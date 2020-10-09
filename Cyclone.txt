@@ -1,0 +1,70 @@
+Cyclone layout:
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0000A0"
+    tools:context=".cycloneActivity">
+
+    <TextView
+        android:id="@+id/tvcyclone"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="169dp"
+        tools:layout_editor_absoluteY="72dp" />
+</LinearLayout>
+  
+
+Cyclone java class:
+package com.example.dms;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
+import android.widget.TextView;
+
+public class cycloneActivity extends AppCompatActivity {
+
+        TextView cylone;
+        String str = "DO's:\n" +
+                "1. Disconnect all electricity appliances\n" +
+                "2. Check that the walls , roof and eaves of your home are secure.\n" +
+                "3. Proferably fit shutter , or at least metal screeens, to all glass areas.\n" +
+                "4. If indoors, stay in bed- curl up & hold on protecting head with pillow.\n" +
+                "5. If outdoors, find a clear spot & drop to ground until shaking stops.\n" +
+                "\n\n" +
+                "DON'Ts:\n" +
+                "1. Think it’s over too soon. (Aftershocks, landslides & tsunamis are possible)\n" +
+                "2. Avoid loa spots, like ditches, basements, or underpasses.\n" +
+                "3. Do not walk through flooded areas.\n" +
+                "4. Don not touch electrical equipment if you are wet or standing in water.\n" +
+                "5. Go by windows- you may be injured by shattered glass. \n";
+
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_cyclone2);
+
+            cylone=(TextView) findViewById(R.id.tvcyclone);
+
+            loadText();
+        }
+
+        private void loadText(){
+
+            cylone.setMovementMethod(new ScrollingMovementMethod());
+            cylone.setText(str);
+
+        }
+
+
+    }
+
+
