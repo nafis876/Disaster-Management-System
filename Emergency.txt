@@ -1,0 +1,71 @@
+Emergency layout:
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0000A0"
+    tools:context=".emergencyActivity">
+
+    <TextView
+        android:id="@+id/tvemergency"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="169dp"
+        tools:layout_editor_absoluteY="72dp" />
+</LinearLayout>
+
+
+Emergency java class:
+
+package com.example.dms;
+
+import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class emergencyActivity extends AppCompatActivity {
+
+
+    TextView emergency;
+    String str = "\n" +
+            "Disasters supplies\n" +
+            "1. Flashlight & extra batteries\n" +
+            "2. First aid kit & manual\n" +
+            "3. Emergency food & water\n" +
+            "4. non-electric can opener\n" +
+            "5. Essential medicines\n" +
+            "6. Dust mask\n" +
+            "7. Sturdy shoes\n" +
+            "8. Bedding.\n" +
+            "9. Critical documents.";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_emergency);
+
+
+        emergency = (TextView) findViewById(R.id.tvemergency);
+
+        loadText();
+    }
+
+    private void loadText() {
+
+        emergency.setMovementMethod(new ScrollingMovementMethod());
+        emergency.setText(str);
+
+    }
+
+}
+
+
+
+
